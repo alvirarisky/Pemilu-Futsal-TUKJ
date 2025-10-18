@@ -408,9 +408,7 @@ main {
 
 .btn-voting {
   display: inline-block;
-  background-color: var(
-    --color-primary-dark
-  ); /* Tetap oranye untuk background */
+  background-color: var(--color-primary-dark);
   color: #ffffff;
   padding: 15px 40px;
   border-radius: 5px;
@@ -544,7 +542,7 @@ footer p:last-child {
 }
 
 /* ================================================================= */
-/* 8. SYARAT & KETENTUAN (CLEAN & ELEGAN) - PERBAIKAN KRITIS */
+/* 8. SYARAT & KETENTUAN (CLEAN & ELEGAN) - PERBAIKAN MARGIN */
 /* ================================================================= */
 
 .terms-page {
@@ -554,7 +552,8 @@ footer p:last-child {
 .terms-content {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0;
+  /* Tambahkan padding horizontal di desktop/tablet agar tidak terlalu mepet tepi */
+  padding: 0 var(--spacing-md);
 }
 
 .terms-box {
@@ -569,7 +568,6 @@ footer p:last-child {
 .terms-section {
   margin-bottom: var(--spacing-md);
   padding-bottom: var(--spacing-md);
-  /* Border halus di bawah setiap bagian */
   border-bottom: 1px solid var(--color-bg-secondary);
 }
 .terms-section:last-child {
@@ -585,38 +583,29 @@ footer p:last-child {
   font-weight: 700;
 }
 
-/* KODE KRITIS UNTUK LIST ITEM: Gunakan list-style kustom yang rapi */
 .terms-section ul {
-  /* Hapus default padding */
   padding: 0;
   margin-top: var(--spacing-xs);
-  list-style: none; /* Matikan bullet default */
+  list-style: none;
 }
 
 .terms-section li {
   font-size: 0.95rem;
   color: var(--color-text-main);
   margin-bottom: 8px;
-  padding-left: 20px; /* Ruang untuk bullet kustom */
+  padding-left: 20px;
   position: relative;
   line-height: 1.4;
 }
 
 .terms-section li::before {
-  /* Bullet kustom yang rapi (titik kecil) */
   content: "•";
   position: absolute;
   left: 0;
   font-size: 1.2rem;
-  line-height: 1; /* Pastikan bullet sejajar dengan teks */
-  color: var(--color-primary-light); /* Warna biru aksen */
+  line-height: 1;
+  color: var(--color-primary-light);
   font-weight: 900;
-}
-/* Akhir KODE KRITIS */
-
-.back-link-container {
-  margin-top: var(--spacing-lg);
-  text-align: center;
 }
 
 .btn-back {
@@ -641,152 +630,168 @@ footer p:last-child {
   /* TAMBAH DI SINI: Shadow biru gelap lebih kuat saat hover */
   box-shadow: 0 6px 12px rgba(5, 67, 126, 0.5); /* rgba dari --color-primary-dark */
 }
+.back-link-container {
+  /* Pastikan container mengambil lebar penuh */
+  width: 100%;
+  margin-top: var(--spacing-lg);
+  text-align: center;
+}
+
+/* Tambahan perbaikan di mobile untuk margin Syarat & Ketentuan */
+@media (max-width: 576px) {
+  .terms-content {
+    padding: 0 var(--spacing-sm); /* Padding horizontal lebih kecil di mobile */
+  }
+  .terms-box {
+    padding: var(--spacing-md); /* Padding internal lebih ringkas */
+  }
+}
 /* ================================================================= */
 /* 9. MEDIA QUERIES (RESPONSIVE) - PERBAIKAN KRITIS UNTUK MOBILE */
 /* ================================================================= */
 
 /* --- Tablet dan Desktop Kecil (992px) --- */
 @media (max-width: 992px) {
-    .candidate-grid { 
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
-        max-width: 700px;
-    }
-    .candidate-photo {
-        width: 100px;
-        height: 100px;
-    }
-    .candidate-card {
-        padding: var(--spacing-xs); /* Kurangi padding card */
-    }
-    .candidate-name {
-        font-size: 1.2rem;
-    }
+  .candidate-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
+    max-width: 700px;
+  }
+  .candidate-photo {
+    width: 100px;
+    height: 100px;
+  }
+  .candidate-card {
+    padding: var(--spacing-xs); /* Kurangi padding card */
+  }
+  .candidate-name {
+    font-size: 1.2rem;
+  }
 }
 
 /* --- Mobile Besar (768px) --- */
 @media (max-width: 768px) {
-    .main-title { 
-        font-size: 2.5rem; 
-    }
-    .candidate-grid { 
-        grid-template-columns: 1fr; /* 1 kolom di mobile */
-        max-width: 90%; /* Biarkan card memenuhi layar dengan sedikit margin */
-        margin: 0 auto;
-    } 
-    
-    /* Header (Navbar Scrollable) */
-    .header-content {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing-xs);
-        padding: var(--spacing-sm); 
-    }
-    .header-controls {
-        /* Memastikan elemen kontrol di satu baris */
-        width: 100%;
-        justify-content: space-between; /* Pisahkan nav dan toggle */
-        padding: 0;
-        margin-top: var(--spacing-xs);
-    }
-    
-    .main-nav {
-        /* Kunci: Memungkinkan scroll horizontal */
-        display: flex; 
-        gap: var(--spacing-sm);
-        overflow-x: auto; 
-        -webkit-overflow-scrolling: touch; 
-        padding-bottom: 5px; 
-        justify-content: initial; 
-        white-space: nowrap; 
-    }
-    .main-nav .nav-item {
-        font-size: 0.9rem; /* Kecilkan ukuran font nav */
-        padding: 5px 10px;
-        flex-shrink: 0; /* Mencegah item nav menyusut */
-    }
-    .theme-toggle {
-        margin-left: var(--spacing-sm); 
-        margin-right: 0;
-        flex-shrink: 0;
-    }
-    main {
-        padding-top: 130px; /* Kompensasi untuk header yang lebih tinggi */
-    }
+  .main-title {
+    font-size: 2.5rem;
+  }
+  .candidate-grid {
+    grid-template-columns: 1fr; /* 1 kolom di mobile */
+    max-width: 90%; /* Biarkan card memenuhi layar dengan sedikit margin */
+    margin: 0 auto;
+  }
 
-    /* Card Candidate (Penyesuaian Ukuran) */
-    .candidate-card {
-        padding: var(--spacing-sm);
-    }
-    .candidate-photo {
-        width: 100px;
-        height: 100px;
-    }
-    .candidate-name { 
-        font-size: 1.3rem; 
-    }
-    
-    /* Tombol dan Teks Umum */
-    .btn-voting {
-        font-size: 1.1rem;
-        padding: 12px 25px;
-    }
-    
-    /* Footer (Memastikan Kontak di Tengah) */
-    .footer-content-wrap {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    .contact-info p {
-        display: block; 
-        text-align: left;
-        margin: 0 auto 5px;
-        width: fit-content; /* Biarkan elemen ditengah */
-    }
-    .social-icons {
-        margin-bottom: var(--spacing-md);
-    }
-    /* Perbaikan untuk Syarat & Ketentuan */
-    .terms-box {
-        padding: var(--spacing-md); /* Lebih kompak */
-    }
+  /* Header (Navbar Scrollable) */
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+  }
+  .header-controls {
+    /* Memastikan elemen kontrol di satu baris */
+    width: 100%;
+    justify-content: space-between; /* Pisahkan nav dan toggle */
+    padding: 0;
+    margin-top: var(--spacing-xs);
+  }
+
+  .main-nav {
+    /* Kunci: Memungkinkan scroll horizontal */
+    display: flex;
+    gap: var(--spacing-sm);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px;
+    justify-content: initial;
+    white-space: nowrap;
+  }
+  .main-nav .nav-item {
+    font-size: 0.9rem; /* Kecilkan ukuran font nav */
+    padding: 5px 10px;
+    flex-shrink: 0; /* Mencegah item nav menyusut */
+  }
+  .theme-toggle {
+    margin-left: var(--spacing-sm);
+    margin-right: 0;
+    flex-shrink: 0;
+  }
+  main {
+    padding-top: 130px; /* Kompensasi untuk header yang lebih tinggi */
+  }
+
+  /* Card Candidate (Penyesuaian Ukuran) */
+  .candidate-card {
+    padding: var(--spacing-sm);
+  }
+  .candidate-photo {
+    width: 100px;
+    height: 100px;
+  }
+  .candidate-name {
+    font-size: 1.3rem;
+  }
+
+  /* Tombol dan Teks Umum */
+  .btn-voting {
+    font-size: 1.1rem;
+    padding: 12px 25px;
+  }
+
+  /* Footer (Memastikan Kontak di Tengah) */
+  .footer-content-wrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .contact-info p {
+    display: block;
+    text-align: left;
+    margin: 0 auto 5px;
+    width: fit-content; /* Biarkan elemen ditengah */
+  }
+  .social-icons {
+    margin-bottom: var(--spacing-md);
+  }
+  /* Perbaikan untuk Syarat & Ketentuan */
+  .terms-box {
+    padding: var(--spacing-md); /* Lebih kompak */
+  }
 }
 
 /* --- Mobile Kecil (576px) --- */
 @media (max-width: 576px) {
-    .main-title { 
-        font-size: 2rem; 
-    }
-    .candidate-grid {
-        max-width: 95%;
-    }
-    .candidate-photo { 
-        width: 80px; /* Kecilkan lagi fotonya */
-        height: 80px; 
-    }
-    .candidate-name { 
-        font-size: 1.1rem; 
-    }
-    .candidate-number {
-        font-size: 0.85rem;
-    }
-    .tab-button {
-        font-size: 0.75rem;
-        padding: 5px 3px;
-    }
-    .tab-content {
-        font-size: 0.75rem;
-    }
-    
-    /* Perbaikan Syarat & Ketentuan di layar sangat kecil */
-    .terms-box {
-        padding: var(--spacing-sm); 
-    }
-    .terms-box li {
-        font-size: 0.8rem; 
-    }
-    .main-nav .nav-item {
-        font-size: 0.8rem;
-        padding: 4px 8px;
-    }
+  .main-title {
+    font-size: 2rem;
+  }
+  .candidate-grid {
+    max-width: 95%;
+  }
+  .candidate-photo {
+    width: 80px; /* Kecilkan lagi fotonya */
+    height: 80px;
+  }
+  .candidate-name {
+    font-size: 1.1rem;
+  }
+  .candidate-number {
+    font-size: 0.85rem;
+  }
+  .tab-button {
+    font-size: 0.75rem;
+    padding: 5px 3px;
+  }
+  .tab-content {
+    font-size: 0.75rem;
+  }
+
+  /* Perbaikan Syarat & Ketentuan di layar sangat kecil */
+  .terms-box {
+    padding: var(--spacing-sm);
+  }
+  .terms-box li {
+    font-size: 0.8rem;
+  }
+  .main-nav .nav-item {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
 }
