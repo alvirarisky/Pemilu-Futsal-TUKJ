@@ -794,4 +794,15 @@ footer p:last-child {
     font-size: 0.8rem;
     padding: 4px 8px;
   }
+
+  .terms-content .main-title {
+    font-size: 1.8rem; /* Mengecilkan Judul Utama */
+  }
+  .terms-content .subtitle {
+    font-size: 1rem; /* Mengecilkan Subjudul */
+  }
+
+  .candidate-grid {
+    max-width: 95%;
+  }
 }
