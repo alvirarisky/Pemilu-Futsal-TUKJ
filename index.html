@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pemilihan Ketua UKM Futsal TUKJ</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Gaya tambahan untuk nomor urut kandidat */
+      .candidate-number {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--color-text-secondary);
+        margin-top: -10px; /* Tarik ke atas agar dekat dengan nama */
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body class="light-theme">
+    <header class="sticky-header">
+      <div class="header-content">
+        <a href="index.html" class="logo-link">
+          <img
+            src="images/logo.png"
+            alt="Logo UKM Futsal Telkom University Jakarta"
+            class="logo"
+          />
+          <span class="ukm-name">UKM Futsal TUKJ</span>
+        </a>
+
+        <div class="header-controls">
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Toggle dark mode"
+          >
+            ☀️
+          </button>
+          <nav class="main-nav">
+            <a href="index.html" class="nav-item active">Home</a>
+            <a href="#candidates-section" class="nav-item">Kandidat</a>
+            <a href="syarat.html" class="nav-item">Syarat & Ketentuan</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1 class="main-title">PEMILIHAN KETUA UKM FUTSAL</h1>
+        <p class="subtitle">Telkom University Jakarta 2025–2026</p>
+        <p class="tagline">The Captain's Seat is Open! Isi dengan suaramu!</p>
+      </section>
+
+      <section class="candidates-list" id="candidates-section">
+        <h2>Daftar Kandidat Ketua</h2>
+        <div class="candidate-grid">
+          <div class="candidate-card" id="kandidat-bagas">
+            <img
+              src="images/bagas.png"
+              alt="Foto Bagas Dwi Saputra"
+              class="candidate-photo"
+            />
+            <h3 class="candidate-name">
+              Bagas Dwi Saputra <span class="badge-color green-dot"></span>
+            </h3>
+            <p class="candidate-number">Kandidat Nomor Urut 1</p>
+
+            <div class="tab-container">
+              <div class="tab-buttons">
+                <button
+                  class="tab-button active"
+                  onclick="showTab(this, 'visi-misi-bagas')"
+                >
+                  Visi & Misi
+                </button>
+                <button
+                  class="tab-button"
+                  onclick="showTab(this, 'proker-bagas')"
+                >
+                  Program Kerja
+                </button>
+              </div>
+
+              <div id="visi-misi-bagas" class="tab-content active">
+                <h4>Visi</h4>
+                <p>
+                  Mewujudkan UKM Futsal yang solid, profesional, dan berprestasi
+                  sebagai wadah pengembangan minat bakat, serta karakter
+                  mahasiswa di bidang olahraga futsal.
+                </p>
+
+                <h4>Misi</h4>
+                <ol>
+                  <li>
+                    Menjadikan UKM Futsal sebagai ruang yang inklusif dan
+                    positif bagi seluruh mahasiswa yang memiliki minat di bidang
+                    futsal.
+                  </li>
+                  <li>
+                    Meningkatkan kualitas latihan dan pembinaan agar mampu
+                    bersaing di tingkat regional maupun nasional.
+                  </li>
+                  <li>
+                    Menjalin kerja sama dengan pihak internal dan eksternal
+                    kampus untuk mendukung kemajuan UKM Futsal.
+                  </li>
+                  <li>
+                    Menumbuhkan semangat sportivitas, solidaritas, dan
+                    kepemimpinan melalui kegiatan futsal.
+                  </li>
+                </ol>
+              </div>
+
+              <div id="proker-bagas" class="tab-content">
+                <h4>Program Kerja Unggulan</h4>
+                <ol>
+                  <li>
+                    Pembinaan Rutin dan Open Recruitment
+                    <ul>
+                      <li>
+                        Latihan rutin dua kali seminggu (teknik, taktik, dan
+                        fisik)
+                      </li>
+                      <li>Coaching clinic bersama pelatih futsal</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Turnamen Internal & Eksternal
+                    <ul>
+                      <li>Turnamen Futsal Antar Universitas dan fakultas</li>
+                      <li>Friendly match antar universitas</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Digitalisasi dan Branding UKM
+                    <ul>
+                      <li>
+                        Membuat konten media sosial (highlight, tips futsal,
+                        profil anggota)
+                      </li>
+                      <li>
+                        Membangun branding UKM melalui Tiktok dan Instagram
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Sinergi Internal Kampus
+                    <ul>
+                      <li>
+                        Kolaborasi dengan UKM lain (UKM Musik, Media, dsb.)
+                        untuk event gabungan
+                      </li>
+                      <li>
+                        Partisipasi aktif dalam acara kampus (Liga Mahasiswa ,
+                        Ppko, Ppkm dan Innovillage )
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="candidate-card" id="kandidat-edi">
+            <img
+              src="images/edi.png"
+              alt="Foto Muhammad Edi Tohirin"
+              class="candidate-photo"
+            />
+            <h3 class="candidate-name">
+              Muhammad Edi Tohirin <span class="badge-color blue-dot"></span>
+            </h3>
+            <p class="candidate-number">Kandidat Nomor Urut 2</p>
+
+            <div class="tab-container">
+              <div class="tab-buttons">
+                <button
+                  class="tab-button active"
+                  onclick="showTab(this, 'visi-misi-edi')"
+                >
+                  Visi & Misi
+                </button>
+                <button
+                  class="tab-button"
+                  onclick="showTab(this, 'proker-edi')"
+                >
+                  Program Kerja
+                </button>
+              </div>
+
+              <div id="visi-misi-edi" class="tab-content active">
+                <h4>Visi</h4>
+                <p>
+                  Mewujudkan tim futsal yang tangguh, disiplin, dan berprestasi
+                  tinggi, dengan menjunjung tinggi rasa tanggung jawab,
+                  solidaritas, serta mental positif yang terus terjaga.
+                </p>
+                <h4>Misi</h4>
+                <ol>
+                  <li>
+                    Membangun Mental Tangguh dengan Mengembangkan mental yang
+                    kuat pada setiap anggota melalui latihan rutin, disiplin
+                    yang tinggi, dan keyakinan diri yang tak terbatas.
+                  </li>
+                  <li>
+                    Meningkatkan Performa Secara Konsisten dengan cara
+                    Meningkatkan kemampuan tim melalui latihan yang teratur dan
+                    fokus untuk mencapai hasil terbaik.
+                  </li>
+                  <li>
+                    Menciptakan Budaya Tim yang Solid dengan Membangun
+                    kebersamaan, saling mendukung, dan berfokus pada kemenangan
+                    tanpa mengorbankan nilai-nilai sportivitas.
+                  </li>
+                  <li>
+                    Pembinaan Teknik dan Analisis Permainan dengan Menyusun pola
+                    latihan yang baik, terstruktur, didukung dengan pendekatan
+                    analisis permainan dan pembinaan yang baik terus menerus.
+                  </li>
+                  <li>
+                    Menjadikan Futsal sebagai Identitas Kebanggaan yang
+                    menjadikan futsal sebagai simbol semangat juang,
+                    solidaritas, dan kebanggaan kampus yang membawa nama baik
+                    tim di setiap langkah.
+                  </li>
+                </ol>
+              </div>
+
+              <div id="proker-edi" class="tab-content">
+                <h4>Program Kerja</h4>
+                <ol>
+                  <li>
+                    Pengembangan Skill & Open Recruitment
+                    <ul>
+                      <li>
+                        Latihan terjadwal 2 kali seminggu (teknik individu,
+                        taktik tim, serta latihan fisik & mental).
+                      </li>
+                      <li>
+                        Seleksi anggota baru dengan sistem scouting dan trial
+                        game.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Kompetisi & Pertandingan Persahabatan
+                    <ul>
+                      <li>Liga Mini UKM Futsal antar angkatan dan jurusan.</li>
+                      <li>
+                        Friendly Match rutin dengan kampus/tim futsal lain untuk
+                        meningkatkan jam terbang dan mental.
+                      </li>
+                      <li>Turnamen antar universitas/prodi.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Digitalisasi & Promosi UKM
+                    <ul>
+                      <li>
+                        Pembuatan konten kreatif reels latihan, profil pemain,
+                        cuplikan pertandingan.
+                      </li>
+                      <li>
+                        Aktif di platform digital TikTok, Instagram, dan
+                        YouTube.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Kolaborasi dan Penguatan Relasi Kampus
+                    <ul>
+                      <li>
+                        Partisipasi dalam event kampus & nasional (Liga
+                        Mahasiswa, Festival Olahraga Kampus).
+                      </li>
+                      <li>
+                        Program “Futsal Goes to SD/MI” untuk memperkenalkan
+                        futsal ke murid/Masyarakat luar.
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="candidate-card" id="kandidat-syauqi">
+            <img
+              src="images/syauqi.png"
+              alt="Foto Syauqi Hilyah Santoso"
+              class="candidate-photo"
+            />
+            <h3 class="candidate-name">
+              Syauqi Hilyah Santoso <span class="badge-color orange-dot"></span>
+            </h3>
+            <p class="candidate-number">Kandidat Nomor Urut 3</p>
+
+            <div class="tab-container">
+              <div class="tab-buttons">
+                <button
+                  class="tab-button active"
+                  onclick="showTab(this, 'visi-misi-syauqi')"
+                >
+                  Visi & Misi
+                </button>
+                <button
+                  class="tab-button"
+                  onclick="showTab(this, 'proker-syauqi')"
+                >
+                  Program Kerja
+                </button>
+              </div>
+
+              <div id="visi-misi-syauqi" class="tab-content active">
+                <h4>Visi</h4>
+                <p>
+                  Mewujudkan tim futsal yang tangguh, disiplin, dan berprestasi
+                  tinggi bukan hanya sekadar bermain, namun memiliki rasa
+                  tanggung jawab dan solidaritas tinggi, dan tetap
+                  mempertahankan mental positif yang sudah dibangun.
+                </p>
+                <h4>Misi</h4>
+                <ol>
+                  <li>
+                    Membangun mental tanguh di setiap anggota melalui latihan
+                    rutin, kedisiplinan tinggi, dan rasa percaya diri tanpa
+                    batas.
+                  </li>
+                  <li>
+                    Meningkatkan performa tim secara konsisten, dengan mengikuti
+                    latihan secara rutin.
+                  </li>
+                  <li>
+                    Menciptakan budaya tim yang solid, saling mendukung, dan
+                    berorientasi pada kemenangan tanpa mengorbankan sportivitas.
+                  </li>
+                  <li>
+                    Membangun pola latihan terarah dengan pendekatan analisis
+                    permainan serta pembinaan teknik yang berkelanjutan.
+                  </li>
+                  <li>
+                    Menjadikan futsal bukan hanya olahraga, tapi identitas
+                    kebanggaan yang membawa semangat juang, solidaritas, dan
+                    nama baik kampus.
+                  </li>
+                </ol>
+              </div>
+
+              <div id="proker-syauqi" class="tab-content">
+                <h4>Program Kerja</h4>
+                <ol>
+                  <li>
+                    Pembelajaran dan pelatihan
+                    <ul>
+                      <li>
+                        Mengadakan pelatihan rutin empat kali dalam sebulan.
+                      </li>
+                      <li>Mempertahankan pelatih external.</li>
+                      <li>
+                        Mengikuti kompetisi eksternal setiap bulannya minimal
+                        satu kali.
+                      </li>
+                      <li>
+                        Mengadakan sparing atau uji coba antar Universitas dan
+                        fakultas untuk mengukur mentalitas pemain.
+                      </li>
+                      <li>
+                        Mengadakan evaluasi performa pemain setiap akhir bulan
+                        bersama pelatih.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Publikasi dan Hubungan Eksternal
+                    <ul>
+                      <li>
+                        Membuat dokumentasi saat pelatihan rutin dan kompetisi.
+                      </li>
+                      <li>
+                        Bekerja sama dengan pihak UKM dan berkolaborasi dalam
+                        kegiatan internal kampus.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Fasilitas
+                    <ul>
+                      <li>
+                        Mengadakan pengecekan fasilitas/perlengkapan futsal
+                        secara rutin satu kali dalam sebulan.
+                      </li>
+                      <li>Membuat jersey tahunan baru.</li>
+                    </ul>
+                  </li>
+                  <li>
+                    Prestasi dan Regenerasi
+                    <ul>
+                      <li>
+                        Memberikan penghargaan kepada pemain yang selalu hadir
+                        dalam peltihan rutin di akhir kepengurusan.
+                      </li>
+                      <li>
+                        Memberikan pengahrgaan best player kepada pemain yang
+                        memiliki prestasi tinggi di UKM Futsal.
+                      </li>
+                      <li>
+                        Memilih calon-calon kepengurusan untuk melanjutkan
+                        kepengurusan yang ada.
+                      </li>
+                      <li>Mengadakan evaluasi besar di akhir kepengurusan</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="voting-action">
+        <a href="#" class="btn-voting">Go to Voting Form</a>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-content-wrap">
+        <div class="footer-col contact-info">
+          <h3>UKM Futsal Telkom University Jakarta</h3>
+          <p>
+            <span aria-hidden="true">📧</span> Email:
+            futsaltelujakarta@gmail.com
+          </p>
+          <p>
+            <span aria-hidden="true">📞</span> Nomor Telepon: +62 818–0305–0805
+          </p>
+          <p>
+            <span aria-hidden="true">📌</span> Alamat: Universitas Telkom Kampus
+            Jakarta
+          </p>
+        </div>
+
+        <div class="footer-col social-icons">
+          <a
+            href="https://www.instagram.com/futsaltukj?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png"
+              alt="Instagram Icon"
+            />
+          </a>
+          <a
+            href="https://www.tiktok.com/@futsal.telujakarta?lang=en-GB"
+            target="_blank"
+            aria-label="TikTok"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/id/thumb/a/a9/TikTok_logo.svg/1280px-TikTok_logo.svg.png"
+              alt="TikTok Icon"
+            />
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2025 UKM Futsal Telkom University Jakarta</p>
+        <p>
+          <a href="syarat.html" class="footer-link">Baca Syarat & Ketentuan</a>
+        </p>
+      </div>
+    </footer>
+    <script>
+      // Fungsi untuk mengaktifkan tab Visi/Misi dan Program Kerja
+      function showTab(button, tabId) {
+        const container = button.closest(".tab-container");
+        container
+          .querySelectorAll(".tab-button")
+          .forEach((btn) => btn.classList.remove("active"));
+        container
+          .querySelectorAll(".tab-content")
+          .forEach((content) => content.classList.remove("active"));
+
+        button.classList.add("active");
+        document.getElementById(tabId).classList.add("active");
+      }
+
+      // KODE BARU UNTUK ACTIVE NAVBAR PADA SAAT SCROLL
+      document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".main-nav .nav-item");
+        const sections = document.querySelectorAll("main section[id]");
+        const candidatesSection = document.getElementById("candidates-section");
+
+        // Fungsi untuk mengamati posisi gulir
+        function activateNavLink() {
+          let current = "";
+
+          // Cari posisi section yang sedang terlihat
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            // Jarak toleransi 200px dari atas viewport
+            if (
+              pageYOffset >= sectionTop - 200 &&
+              pageYOffset < sectionTop + sectionHeight - 200
+            ) {
+              current = section.getAttribute("id");
+            }
+          });
+
+          // Perbarui kelas active pada navbar
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+            if (link.getAttribute("href").includes(current) && current !== "") {
+              link.classList.add("active");
+            }
+
+            // Kasus khusus Home (jika di paling atas)
+            if (pageYOffset < candidatesSection.offsetTop - 300) {
+              // Asumsi link Home adalah yang pertama
+              navLinks[0].classList.add("active");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", activateNavLink);
+        activateNavLink(); // Panggil saat memuat halaman untuk set status awal
+
+        // Logika untuk Theme Toggle (jika belum ada)
+        const themeToggle = document.getElementById("theme-toggle");
+        if (themeToggle) {
+          themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-theme");
+            document.body.classList.toggle("light-theme");
+            const isDark = document.body.classList.contains("dark-theme");
+            themeToggle.textContent = isDark ? "🌙" : "☀️";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

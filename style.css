@@ -1,0 +1,684 @@
+/* Import Font Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+/* ================================================================= */
+/* 1. VARIABEL TEMA */
+/* ================================================================= */
+
+:root {
+  /* Light Mode Variables (Default) */
+  --color-bg-main: #f8f9fa;
+  --color-bg-card: #ffffff;
+  --color-bg-secondary: #e9ecef;
+  --color-text-main: #212529;
+  --color-text-secondary: #6c757d;
+
+  --color-primary-dark: #05437e; /* Biru Tua Serius */
+  --color-primary-light: #2090f8; /* Biru Terang Aksen */
+  --color-shadow-base: rgba(0, 0, 0, 0.05);
+  --color-white: #ffffff;
+}
+
+/* Dark Mode Variables */
+.dark-theme {
+  --color-bg-main: #121212;
+  --color-bg-card: #1e1e1e;
+  --color-bg-secondary: #2c2c2c;
+  --color-text-main: #e0e0e0;
+  --color-text-secondary: #aaaaaa;
+
+  --color-primary-dark: #8db4e4;
+  --color-primary-light: #4a90e2;
+  --color-shadow-base: rgba(0, 0, 0, 0.5);
+  --color-white: #ffffff;
+}
+
+/* ================================================================= */
+/* 2. SPACING & GLOBAL RESET */
+/* ================================================================= */
+
+:root {
+  --spacing-lg: 3rem;
+  --spacing-md: 1.5rem;
+  --spacing-sm: 1rem;
+  --spacing-xs: 0.5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  color: var(--color-primary-dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-primary-light);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ================================================================= */
+/* 3. HEADER & NAVIGASI */
+/* ================================================================= */
+
+.sticky-header {
+  background-color: var(--color-bg-card);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px var(--color-shadow-base);
+  padding: var(--spacing-xs) 0;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 40px;
+  margin-right: var(--spacing-xs);
+
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  background-color: transparent;
+
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.861));
+}
+
+.ukm-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-text-secondary);
+  color: var(--color-text-main);
+  padding: 6px 10px;
+  margin-right: var(--spacing-md);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg-card);
+}
+
+.main-nav {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.nav-item {
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  padding: var(--spacing-xs) 0;
+  position: relative;
+}
+
+.nav-item:hover {
+  color: var(--color-primary-dark);
+}
+
+.nav-item.active {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+}
+
+.nav-item.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary-dark);
+  border-radius: 1px;
+}
+
+/* ================================================================= */
+/* 4. HERO SECTION & JUDUL */
+/* ================================================================= */
+
+main {
+  padding-top: 100px;
+}
+
+.hero {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.main-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.tagline {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-primary-dark);
+  border: 1px solid var(--color-primary-light);
+  padding: 6px 18px;
+  display: inline-block;
+  border-radius: 20px;
+}
+
+/* ================================================================= */
+/* 5. KANDIDAT CARDS */
+/* ================================================================= */
+
+.candidates-list {
+  padding: var(--spacing-lg) 0;
+}
+
+.candidates-list h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-lg);
+}
+
+.candidate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.candidate-card {
+  background-color: var(--color-bg-card);
+  padding: var(--spacing-sm);
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; /* Tambahkan border 0.3s ease */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  border: 1px var(--color-primary-light);
+}
+
+.candidate-card:hover {
+  transform: translateY(-5px);
+  /* Hapus perubahan background-color, biarkan tetap putih */
+  background-color: var(--color-bg-card);
+  /* Ganti box-shadow dengan border biru dan bayangan yang lebih lembut */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-primary-light); /* BORDER BIRU KRITIS */
+}
+
+.candidate-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: var(--spacing-xs);
+  border: 3px solid var(--color-primary-light);
+}
+
+.candidate-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  /* Kunci 1: Hilangkan margin bawah nama agar nomor urut menempel erat */
+  margin-bottom: 0 !important;
+  color: var(--color-primary-dark);
+}
+
+.candidate-number {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  /* Kunci 2: Hilangkan margin atas nomor urut untuk menempel ke nama */
+  margin-top: 0 !important;
+  /* Kunci 3: Beri jarak yang cukup di bawah, memisahkan dari Tabs */
+  margin-bottom: var(--spacing-sm); /* 1rem = 16px, jarak aman ke Tabs */
+}
+
+.candidate-number strong {
+  font-weight: 700;
+}
+
+.badge-color {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+/* Tabs */
+.tab-container {
+  border-top: 1px solid var(--color-bg-secondary);
+  padding-top: var(--spacing-xs);
+  margin-top: var(--spacing-xs);
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: var(--spacing-xs);
+}
+
+.tab-button {
+  flex-grow: 1;
+  padding: 6px 4px;
+  border: 1px solid var(--color-bg-secondary);
+  background-color: var(--color-bg-main);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.tab-button:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.tab-button:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.tab-button.active {
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg-card);
+  border-color: var(--color-primary-dark);
+}
+
+.tab-content {
+  display: none;
+  text-align: left;
+  padding: var(--spacing-xs) 0;
+  font-size: 0.85rem;
+  animation: fadeIn 0.4s;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-primary-light);
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+}
+
+.tab-content ul,
+.tab-content ol {
+  padding-left: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+}
+
+.tab-content ol {
+  list-style-type: decimal; /* Jaga agar List utama Misi/Proker tetap bernomor (1, 2, 3) */
+}
+
+/* KODE KRITIS: Targetkan UL yang ada di dalam OL untuk diubah menjadi bullet (disk) */
+.tab-content ol ul {
+  /* Hapus penomoran default browser pada sub-list */
+  list-style-type: disc;
+  /* Tambahkan indentasi ekstra agar terlihat sebagai sub-poin */
+  padding-left: var(--spacing-md);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.tab-content li {
+  color: var(--color-text-main);
+  margin-bottom: 3px;
+  padding-left: 0;
+  position: static;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================================================= */
+/* 6. TOMBOL VOTING */
+/* ================================================================= */
+
+.voting-action {
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+}
+
+.btn-voting {
+  display: inline-block;
+  background-color: var(
+    --color-primary-dark
+  ); /* Tetap oranye untuk background */
+  color: #ffffff;
+  padding: 15px 40px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.2s ease
+  box-shadow 0.3s ease; /* Tambah box-shadow transition */
+
+  /* UBAH DI SINI: Shadow biru gelap untuk default */
+  box-shadow: 0 4px 10px rgba(5, 67, 126, 0.3); /* rgba dari --color-primary-dark */
+}
+
+.btn-voting:hover {
+  background-color: white; /* Tetap oranye lebih gelap */
+  transform: translateY(-2px);
+
+  /* UBAH DI SINI: Shadow biru gelap lebih kuat saat hover */
+  box-shadow: 0 6px 12px rgba(5, 67, 126, 0.5); /* rgba dari --color-primary-dark */
+}
+
+/* ================================================================= */
+/* 7. FOOTER (Struktur Satu Kolom Terpusat - FULLY CENTERED) */
+/* ================================================================= */
+
+footer {
+  background-color: var(--color-bg-card);
+  text-align: center;
+  padding: var(--spacing-md) 0;
+  border-top: 5px solid var(--color-primary-light);
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  transition: background-color 0.3s;
+}
+
+.footer-content-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md) var(--spacing-md);
+
+  display: block;
+  text-align: center;
+
+  border-bottom: 1px solid var(--color-bg-secondary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-col {
+  width: 100%;
+  padding: 0;
+}
+
+.footer-col h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Styling Info Kontak (Sekarang terpusat) */
+.contact-info p {
+  color: var(--color-text-main);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.contact-info {
+  margin-bottom: var(--spacing-md);
+}
+
+.contact-info p span[aria-hidden="true"] {
+  font-size: 1.1rem;
+  color: var(--color-primary-light);
+}
+
+.social-icons {
+  text-align: center;
+  padding-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 var(--spacing-xs);
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.social-icons img {
+  /* --- PERBAIKAN KRITIS UNTUK IKON --- */
+  height: 35px;
+  width: 50px; /* Set width dan height yang sama */
+  object-fit: contain; /* JAMIN mempertahankan rasio aspek di dalam kotak */
+  /* ------------------------------------ */
+  vertical-align: middle;
+}
+
+.social-icons a:last-child img {
+  height: 70px; /* Tingkatkan tinggi sedikit */
+  width: 80px; /* Tingkatkan lebar sedikit */
+  /* Beri margin tambahan agar ada jarak dengan ikon sebelumnya */
+  margin-left: 5px;
+}
+
+/* Footer Paling Bawah */
+.footer-bottom {
+  text-align: center;
+  padding-top: var(--spacing-xs);
+}
+
+footer p {
+  margin-bottom: var(--spacing-xs);
+}
+footer p:last-child {
+  margin-bottom: 0;
+}
+
+.footer-link {
+  color: var(--color-text-secondary);
+}
+.footer-link:hover {
+  color: var(--color-primary-light);
+}
+
+/* ================================================================= */
+/* 8. SYARAT & KETENTUAN (CLEAN & ELEGAN) - PERBAIKAN KRITIS */
+/* ================================================================= */
+
+.terms-page {
+  padding-bottom: var(--spacing-lg);
+}
+
+.terms-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.terms-box {
+  background-color: var(--color-bg-card);
+  padding: var(--spacing-lg);
+  border-radius: 8px;
+  box-shadow: 0 2px 15px var(--color-shadow-base);
+  margin-top: var(--spacing-md);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.terms-section {
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  /* Border halus di bawah setiap bagian */
+  border-bottom: 1px solid var(--color-bg-secondary);
+}
+.terms-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.terms-section h2 {
+  font-size: 1.3rem;
+  color: var(--color-primary-dark);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
+}
+
+/* KODE KRITIS UNTUK LIST ITEM: Gunakan list-style kustom yang rapi */
+.terms-section ul {
+  /* Hapus default padding */
+  padding: 0;
+  margin-top: var(--spacing-xs);
+  list-style: none; /* Matikan bullet default */
+}
+
+.terms-section li {
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  margin-bottom: 8px;
+  padding-left: 20px; /* Ruang untuk bullet kustom */
+  position: relative;
+  line-height: 1.4;
+}
+
+.terms-section li::before {
+  /* Bullet kustom yang rapi (titik kecil) */
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+  line-height: 1; /* Pastikan bullet sejajar dengan teks */
+  color: var(--color-primary-light); /* Warna biru aksen */
+  font-weight: 900;
+}
+/* Akhir KODE KRITIS */
+
+.back-link-container {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+}
+
+.btn-back {
+  display: inline-block;
+  background-color: var(--color-primary-dark);
+  color: var(--color-bg-card);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease; /* Tambah box-shadow transition */
+
+  /* TAMBAH DI SINI: Shadow biru gelap untuk default */
+  box-shadow: 0 4px 10px rgba(5, 67, 126, 0.3); /* rgba dari --color-primary-dark */
+}
+
+.btn-back:hover {
+  background-color: white;
+  transform: translateY(-2px);
+
+  /* TAMBAH DI SINI: Shadow biru gelap lebih kuat saat hover */
+  box-shadow: 0 6px 12px rgba(5, 67, 126, 0.5); /* rgba dari --color-primary-dark */
+}
+/* ================================================================= */
+/* 9. MEDIA QUERIES (Penyesuaian Footer) */
+/* ================================================================= */
+
+/* ... (Media queries sebelumnya) ... */
+
+@media (max-width: 768px) {
+  /* ... (Kode responsif lainnya) ... */
+
+  /* Perubahan untuk Footer di Mobile */
+  .footer-content-wrap {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-col {
+    width: 100%;
+    margin-bottom: var(--spacing-md);
+    min-width: unset;
+  }
+  .contact-info p {
+    /* Di mobile, biarkan kontak menyebar agar lebih mudah dibaca */
+    display: flex;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .social-icons a {
+    margin: 0 5px;
+  }
+  .social-icons img {
+    height: 30px;
+    width: 30px;
+    object-fit: contain; /* JAMIN di mobile juga */
+  }
+  .social-icons a:last-child img {
+    height: 50px;
+    width: 50px;
+    margin-left: 3px;
+  }
+}

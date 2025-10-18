@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Syarat & Ketentuan Voting</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="light-theme">
+    <header class="sticky-header">
+      <div class="header-content">
+        <a href="index.html" class="logo-link">
+          <img
+            src="images/logo.png"
+            alt="Logo UKM Futsal Telkom University Jakarta"
+            class="logo"
+          />
+          <span class="ukm-name">UKM Futsal TUKJ</span>
+        </a>
+        <div class="header-controls">
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Toggle dark mode"
+          >
+            ☀️
+          </button>
+          <nav class="main-nav">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="index.html#candidates-section" class="nav-item"
+              >Kandidat</a
+            >
+            <a href="syarat.html" class="nav-item active">Syarat & Ketentuan</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main class="terms-page">
+      <section class="terms-content">
+        <h1 class="main-title">SYARAT & KETENTUAN VOTING</h1>
+        <p class="subtitle">
+          Pemilihan Ketua UKM Futsal Telkom University Jakarta 2025–2026
+        </p>
+
+        <div class="terms-box">
+          <div class="terms-section">
+            <h2>01. Peserta Pemilih</h2>
+            <ul>
+              <li>
+                Pemilih adalah anggota aktif UKM Futsal Telkom University
+                Jakarta dari angkatan 2021 hingga 2024.
+              </li>
+              <li>
+                Voting akan dilaksanakan pada Kamis, 24 Oktober 2025, pukul
+                08.00 - 16.00 WIB.
+              </li>
+              <li>
+                Setelah waktu voting berakhir, sistem akan ditutup dan tidak ada
+                pengisian ulang.
+              </li>
+            </ul>
+          </div>
+
+          <div class="terms-section">
+            <h2>02. Ketentuan Pemilihan</h2>
+            <ul>
+              <li>
+                Setiap anggota hanya berhak mengirimkan satu suara (1x voting).
+              </li>
+              <li>
+                Pemilih diwajibkan memilih nama mereka sendiri sesuai daftar
+                keanggotaan di Google Form.
+              </li>
+              <li>
+                Suara yang telah dikirim tidak dapat diubah atau ditarik
+                kembali.
+              </li>
+            </ul>
+          </div>
+
+          <div class="terms-section">
+            <h2>03. Kerahasiaan Suara</h2>
+            <ul>
+              <li>
+                Seluruh data dan hasil voting dijaga kerahasiaannya oleh
+                panitia.
+              </li>
+              <li>
+                Hasil akhir pemilihan akan disampaikan secara internal kepada
+                anggota UKM Futsal TUKJ.
+              </li>
+            </ul>
+          </div>
+
+          <div class="terms-section last-section">
+            <h2>04. Lain-Lain</h2>
+            <ul>
+              <li>
+                Pelanggaran terhadap ketentuan di atas dapat mengakibatkan
+                pembatalan suara.
+              </li>
+              <li>
+                Dengan mengikuti voting, pemilih dianggap telah membaca dan
+                menyetujui seluruh syarat & ketentuan ini.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="back-link-container">
+          <a href="index.html" class="btn-back">
+            &larr; Kembali ke Halaman Utama
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content-wrap">
+        <div class="footer-col contact-info">
+          <h3>UKM Futsal Telkom University Jakarta</h3>
+          <p>
+            <span aria-hidden="true">📧</span> Email:
+            futsaltelujakarta@gmail.com
+          </p>
+          <p>
+            <span aria-hidden="true">📞</span> Nomor Telepon: +62 818–0305–0805
+          </p>
+          <p>
+            <span aria-hidden="true">📌</span> Alamat: Universitas Telkom Kampus
+            Jakarta
+          </p>
+        </div>
+
+        <div class="footer-col social-icons">
+          <a
+            href="https://www.instagram.com/futsaltukj?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            aria-label="Instagram"
+          >
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/1200px-Instagram_icon.png" alt="Instagram Icon" />
+          </a>
+          <a href="https://www.tiktok.com/@futsal.telujakarta?lang=en-GB" target="_blank" aria-label="TikTok">
+                    <img src="https://upload.wikimedia.org/wikipedia/id/thumb/a/a9/TikTok_logo.svg/1280px-TikTok_logo.svg.png" alt="TikTok Icon">
+                </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2025 UKM Futsal Telkom University Jakarta</p>
+        <p>
+          <a href="syarat.html" class="footer-link">Baca Syarat & Ketentuan</a>
+        </p>
+      </div>
+    </footer>
+
+    <script>
+      // DARK/LIGHT MODE SCRIPT
+      function applyTheme(theme) {
+        document.body.className = theme + "-theme";
+        localStorage.setItem("theme", theme);
+        const toggle = document.getElementById("theme-toggle");
+        if (toggle) {
+          toggle.innerHTML = theme === "dark" ? "🌙" : "☀️";
+        }
+      }
+
+      function toggleTheme() {
+        const currentTheme = document.body.classList.contains("dark-theme")
+          ? "dark"
+          : "light";
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        applyTheme(newTheme);
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("theme") || "light";
+        applyTheme(savedTheme);
+
+        const toggleButton = document.getElementById("theme-toggle");
+        if (toggleButton) {
+          toggleButton.addEventListener("click", toggleTheme);
+        }
+      });
+    </script>
+  </body>
+</html>
