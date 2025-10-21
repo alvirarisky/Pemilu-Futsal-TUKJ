@@ -805,4 +805,31 @@ footer p:last-child {
   .candidate-grid {
     max-width: 95%;
   }
+  /* --- Mobile Kecil (576px) --- */
+  @media (max-width: 576px) {
+    /* ... (kode lainnya) ... */
+
+    /* Perbaikan KRITIS: Syarat & Ketentuan di layar sangat kecil */
+    .terms-content .main-title {
+      font-size: 1.6rem; /* Judul utama Syarat/Ketentuan lebih kecil */
+      margin-bottom: 0;
+    }
+    .terms-content .subtitle {
+      font-size: 0.85rem; /* Subjudul sangat kecil */
+      margin-bottom: var(--spacing-sm);
+    }
+    .terms-box {
+      padding: var(--spacing-sm); /* Padding internal sangat ringkas */
+    }
+    .terms-box li {
+      font-size: 0.85rem; /* List item lebih kecil */
+    }
+    .terms-section h2 {
+      font-size: 1.2rem; /* Judul sub-bagian lebih kecil */
+    }
+    .main-nav .nav-item {
+      font-size: 0.8rem;
+      padding: 4px 8px;
+    }
+  }
 }

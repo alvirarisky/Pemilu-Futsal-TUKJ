@@ -21,22 +21,14 @@
           />
           <span class="ukm-name">UKM Futsal TUKJ</span>
         </a>
-        <div class="header-controls">
-          <button
-            id="theme-toggle"
-            class="theme-toggle"
-            aria-label="Toggle dark mode"
+        
+        <nav class="main-nav">
+          <a href="index.html" class="nav-item">Home</a>
+          <a href="index.html#candidates-section" class="nav-item"
+            >Kandidat</a
           >
-            ☀️
-          </button>
-          <nav class="main-nav">
-            <a href="index.html" class="nav-item">Home</a>
-            <a href="index.html#candidates-section" class="nav-item"
-              >Kandidat</a
-            >
-            <a href="syarat.html" class="nav-item active">Syarat & Ketentuan</a>
-          </nav>
-        </div>
+          <a href="syarat.html" class="nav-item active">Syarat & Ketentuan</a>
+        </nav>
       </div>
     </header>
 
@@ -53,10 +45,10 @@
             <ul>
               <li>
                 Pemilih adalah anggota aktif UKM Futsal Telkom University
-                Jakarta dari angkatan 2021 hingga 2024.
+                Jakarta dari angkatan 2022 hingga 2025.
               </li>
               <li>
-                Voting akan dilaksanakan pada Kamis, 24 Oktober 2025, pukul
+                Voting akan dilaksanakan pada Jumat, 24 Oktober 2025, pukul
                 08.00 - 16.00 WIB.
               </li>
               <li>
@@ -170,33 +162,8 @@
     </footer>
 
     <script>
-      // DARK/LIGHT MODE SCRIPT
-      function applyTheme(theme) {
-        document.body.className = theme + "-theme";
-        localStorage.setItem("theme", theme);
-        const toggle = document.getElementById("theme-toggle");
-        if (toggle) {
-          toggle.innerHTML = theme === "dark" ? "🌙" : "☀️";
-        }
-      }
-
-      function toggleTheme() {
-        const currentTheme = document.body.classList.contains("dark-theme")
-          ? "dark"
-          : "light";
-        const newTheme = currentTheme === "dark" ? "light" : "dark";
-        applyTheme(newTheme);
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const savedTheme = localStorage.getItem("theme") || "light";
-        applyTheme(savedTheme);
-
-        const toggleButton = document.getElementById("theme-toggle");
-        if (toggleButton) {
-          toggleButton.addEventListener("click", toggleTheme);
-        }
-      });
+      // SCRIPT KOSONG KARENA TIDAK ADA FUNGSI SCROLLSPY/TAB DI HALAMAN INI
+      // Hapus semua script theme toggle
     </script>
   </body>
 </html>
